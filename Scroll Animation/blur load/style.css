@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  background: linear-gradient(
+    135deg,
+    #ff6f61,
+    #ffb6b9
+  ); /* Bright gradient background */
+}
+
+h1 {
+  margin: 20px;
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4); /* Slightly stronger text shadow for contrast */
+}
+
+.box-container {
+  display: flex;
+  gap: 20px;
+}
+
+.box {
+  background-color: #ff8a65; /* Bright coral color */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 150px;
+  margin: 10px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for depth */
+  opacity: 0;
+  transform: translateX(200%);
+  transition: all 0.6s ease-out;
+}
+
+.box:nth-of-type(even) {
+  transform: translateX(-200%);
+}
+
+.box.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.box:hover {
+  transform: scale(1.1); /* Slightly more scale effect for interactivity */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .box-container {
+    flex-direction: column; /* Stack boxes vertically on small screens */
+    align-items: center;
+  }
+}
